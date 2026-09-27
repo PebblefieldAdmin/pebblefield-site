@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pebblefield</title>
+<meta name="description" content="Pebblefield is Minesweeper that never runs out of ground. Every tile you clear uncovers part of a hidden painting.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root{ --bg:#DCE7E6; --card:#F6FAF9; --ink:#23383D; --muted:#4F6368; --line:rgba(35,56,61,.12); --link:#1F7FA3; --chip:#E4EDEB; --flag:#EFA92E; }
+  @media (prefers-color-scheme: dark){ :root{ --bg:#0F1A20; --card:#1C2E35; --ink:#DCEBEA; --muted:#A3B8BC; --line:rgba(220,235,234,.12); --link:#7CCFEA; --chip:#243A42; --flag:#E8B55A; } }
+  *{ box-sizing:border-box }
+  body{ margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main{ max-width:720px; margin:0 auto; padding:40px 16px 64px; }
+  .hero{ text-align:center; padding:8px 0 28px; }
+  .hero img{ width:112px; height:112px; border-radius:26px; box-shadow:0 12px 30px rgba(20,40,45,.22); }
+  h1{ font-size:40px; line-height:1.1; margin:22px 0 10px; letter-spacing:-.01em; }
+  .tagline{ font-size:19px; color:var(--muted); margin:0 auto 20px; max-width:30em; }
+  .badge{ display:inline-block; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--bg); font-weight:700; font-size:15px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:24px; padding:24px; margin-top:16px; }
+  h2{ font-size:22px; margin:0 0 12px; }
+  .features{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0; padding:0; list-style:none; }
+  .features li{ background:var(--chip); border-radius:18px; padding:14px 16px; }
+  .features b{ display:block; }
+  .features span{ color:var(--muted); font-size:15px; }
+  details{ border-top:1px solid var(--line); padding:12px 0; }
+  details:first-of-type{ border-top:0; padding-top:0; }
+  summary{ cursor:pointer; font-weight:700; }
+  details p{ margin:8px 0 0; color:var(--muted); }
+  a{ color:var(--link); }
+  footer{ text-align:center; color:var(--muted); font-size:15px; margin-top:28px; }
+  @media (max-width:520px){ h1{ font-size:34px; } .features{ grid-template-columns:1fr; } .card{ padding:20px 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <img src="icon.svg" alt="Pebblefield app icon">
+    <h1>Pebblefield</h1>
+    <p class="tagline">Minesweeper that never runs out of ground. Every tile you clear uncovers part of a hidden painting.</p>
+    <span class="badge">Coming soon to the App Store</span>
+  </section>
+
+  <section class="card">
+    <h2>What's inside</h2>
+    <ul class="features">
+      <li><b>An endless field</b><span>Dig in any direction. A mine only locks its own sector, so your game never ends.</span></li>
+      <li><b>A hidden painting</b><span>Every tile you clear paints part of a picture. Zoom out to see it grow.</span></li>
+      <li><b>A daily commute goal</b><span>One small goal sized for a single ride, with a streak that weekends never break.</span></li>
+      <li><b>Daily Sprint</b><span>Five minutes, the same world for everyone, helpers switched off.</span></li>
+    </ul>
+  </section>
+
+  <section class="card" id="support">
+    <h2>Support</h2>
+    <details>
+      <summary>How do I restore my Commuter Pass?</summary>
+      <p>Open the menu (the two lines at the top right) and tap Restore purchases. It is also at the bottom of the shop. Use the same Apple ID you bought it with.</p>
+    </details>
+    <details>
+      <summary>How do I cancel my Commuter Pass?</summary>
+      <p>Subscriptions are managed by Apple. Open the Settings app, tap your name, then Subscriptions, then Pebblefield. Cancel at least 24 hours before the month ends to avoid the next charge.</p>
+    </details>
+    <details>
+      <summary>How do I move my progress to a new iPhone?</summary>
+      <p>Restoring your new iPhone from an iCloud or computer backup brings your game with it. You can also open the menu, tap Back up progress, copy the code, and paste it into Restore on the new phone.</p>
+    </details>
+    <details>
+      <summary>Why did part of the field lock?</summary>
+      <p>Hitting a mine locks that sector. Clear all 8 sectors around it to reopen it for free, or reopen it straight away with Glints or a short ad.</p>
+    </details>
+    <details>
+      <summary>How do I change my ad privacy choices?</summary>
+      <p>Where the law requires it, the menu has an Ad privacy choices button. You can also turn off tracking for all apps in the Settings app under Privacy &amp; Security, then Tracking.</p>
+    </details>
+    <details>
+      <summary>Something else?</summary>
+      <p>Email <a href="mailto:[CONTACT EMAIL]">[CONTACT EMAIL]</a> and we will get back to you.</p>
+    </details>
+  </section>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="#support">Support</a><br>
+    © 2026 [PUBLISHER NAME]
+  </footer>
+</main>
+</body>
+</html>
