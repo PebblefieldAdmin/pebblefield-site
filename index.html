@@ -21,18 +21,36 @@
   .badge{ display:inline-block; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--bg); font-weight:700; font-size:15px; }
   .card{ background:var(--card); border:1px solid var(--line); border-radius:24px; padding:24px; margin-top:16px; }
   h2{ font-size:22px; margin:0 0 12px; }
-  .features{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0; padding:0; list-style:none; }
-  .features li{ background:var(--chip); border-radius:18px; padding:14px 16px; }
-  .features b{ display:block; }
-  .features span{ color:var(--muted); font-size:15px; }
   details{ border-top:1px solid var(--line); padding:12px 0; }
   details:first-of-type{ border-top:0; padding-top:0; }
   summary{ cursor:pointer; font-weight:700; }
   details p{ margin:8px 0 0; color:var(--muted); }
   a{ color:var(--link); }
   footer{ text-align:center; color:var(--muted); font-size:15px; margin-top:28px; }
-  @media (max-width:520px){ h1.wordmark{ font-size:22px; letter-spacing:.34em; margin-right:-.34em; } .features{ grid-template-columns:1fr; } .card{ padding:20px 16px; } }
-  h1, h2, summary, .badge, .features b, th{ font-family:Fredoka, ui-rounded, system-ui, sans-serif; font-weight:600; }
+  /* screens: a swipeable row of real game screens, running edge to edge */
+  .screens{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; margin:8px -16px 0; padding:8px 16px 20px; scrollbar-width:none; }
+  .screens::-webkit-scrollbar{ display:none }
+  .screens figure{ flex:0 0 min(62vw, 230px); margin:0; scroll-snap-align:center; }
+  .screens figcaption{ text-align:center; margin-bottom:10px; }
+  .screens figcaption b{ display:block; font:600 20px/1.2 Fredoka, ui-rounded, system-ui, sans-serif; }
+  .screens figcaption span{ color:var(--muted); font-size:14px; }
+  .screens img{ display:block; width:100%; height:auto; border-radius:28px; border:6px solid var(--ink); box-shadow:0 14px 30px rgba(20,40,45,.25); background:var(--card); }
+  /* on wide screens the row runs the full window width, so all five fit side by side */
+  @media (min-width:900px){ .screens{ margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:24px; padding-right:24px; justify-content:safe center; } .screens figure{ flex-basis:200px; } }
+  /* scenes: the real pixel-art scenes, a few kept as a mystery */
+  .scenes-card h2{ display:flex; align-items:baseline; gap:10px; }
+  .big{ font-size:44px; line-height:1; color:var(--flag); }
+  .wall{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+  .scene{ width:100%; aspect-ratio:1; height:auto; border-radius:12px; image-rendering:pixelated; display:block; }
+  .scene.q{ display:grid; place-items:center; background:var(--chip); color:var(--muted); font:600 22px Fredoka, ui-rounded, system-ui, sans-serif; box-shadow:inset 0 -3px 0 var(--line); }
+  /* facts: four icons, a few words each */
+  .facts{ list-style:none; padding:0; margin:16px 0 0; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .facts li{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:16px 10px; text-align:center; }
+  .facts svg{ width:30px; height:30px; color:var(--flag); display:block; margin:0 auto 8px; }
+  .facts b{ font:600 15px/1.25 Fredoka, ui-rounded, system-ui, sans-serif; }
+  @media (max-width:520px){ .facts{ grid-template-columns:1fr 1fr; } .wall{ gap:6px; } .scene{ border-radius:9px; } }
+  @media (max-width:520px){ h1.wordmark{ font-size:22px; letter-spacing:.34em; margin-right:-.34em; } .card{ padding:20px 16px; } }
+  h1, h2, summary, .badge, th{ font-family:Fredoka, ui-rounded, system-ui, sans-serif; font-weight:600; }
   b, strong{ font-weight:800; }
 </style>
 </head>
@@ -41,21 +59,20 @@
   <section class="hero">
     <img src="icon.svg" alt="Pebblefield app icon">
     <h1 class="wordmark">Pebblefield</h1>
-    <p class="tagline">Calm Minesweeper that never runs out of ground. Every tile you clear paints part of a hidden 8-bit scene, and no game ever needs a guess.</p>
+    <p class="tagline">Calm Minesweeper that paints a hidden picture.</p>
     <span class="badge">Coming soon to the App Store</span>
   </section>
 
-  <section class="card">
-    <h2>What's inside</h2>
-    <ul class="features">
-      <li><b>An endless field</b><span>Dig in any direction. A mine only locks its own sector, so your game never ends.</span></li>
-      <li><b>25 hidden scenes</b><span>Every tile you clear paints part of a picture. Collect each scene in your gallery, and earn a gold star for painting one without a single mine.</span></li>
-      <li><b>No guessing, ever</b><span>Every field is solvable by logic. If the numbers ever leave you stuck, a safe tile lights up for free.</span></li>
-      <li><b>Blitz of the Day</b><span>Five minutes, the same map for everyone, and a new twist each day. Top places on the Game Center leaderboard win Glints.</span></li>
-      <li><b>Five daily goals</b><span>Small goals sized for a commute. Finish any one to keep your streak, which weekends never break.</span></li>
-      <li><b>Make it yours</b><span>Dozens of looks for your pebbles, flags and celebrations, and moods for the whole field. Styles never change how the game plays.</span></li>
-    </ul>
+  <section class="screens" aria-label="Screens from the game">
+    <figure><figcaption><b>Watch it paint</b><span>Every tile is a pixel</span></figcaption><img src="shots/2.webp" alt="Watch it paint" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Dig forever</b><span>The ground never runs out</span></figcaption><img src="shots/1.webp" alt="Dig forever" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Never guess</b><span>Stuck? A safe tile glows</span></figcaption><img src="shots/3.webp" alt="Never guess" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Blitz every day</b><span>New map, new twist</span></figcaption><img src="shots/4.webp" alt="Blitz every day" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Make it yours</b><span>Pebbles, flags, moods</span></figcaption><img src="shots/5.webp" alt="Make it yours" loading="lazy" width="600" height="1300"></figure>
   </section>
+
+  <section class="card scenes-card">
+    <h2><span class="big">25</span> scenes to uncover</h2>
+    <div class="wall"><img class="scene" src="scenes/dawn-lake.png" alt="Dawn Lake" title="Dawn Lake" loading="lazy" width="48" height="48"><img class="scene" src="scenes/bamboo-grove.png" alt="Bamboo Grove" title="Bamboo Grove" loading="lazy" width="48" height="48"><img class="scene" src="scenes/blossom-hill.png" alt="Blossom Hill" title="Blossom Hill" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/moonlit-pagoda.png" alt="Moonlit Pagoda" title="Moonlit Pagoda" loading="lazy" width="48" height="48"><img class="scene" src="scenes/rice-terraces.png" alt="Rice Terraces" title="Rice Terraces" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sand-garden.png" alt="Sand Garden" title="Sand Garden" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sunset-sea.png" alt="Sunset Sea" title="Sunset Sea" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/maple-valley.png" alt="Maple Valley" title="Maple Valley" loading="lazy" width="48" height="48"><img class="scene" src="scenes/lantern-festival.png" alt="Lantern Festival" title="Lantern Festival" loading="lazy" width="48" height="48"><img class="scene" src="scenes/misty-tea-fields.png" alt="Misty Tea Fields" title="Misty Tea Fields" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/wisteria-bridge.png" alt="Wisteria Bridge" title="Wisteria Bridge" loading="lazy" width="48" height="48"><img class="scene" src="scenes/hidden-waterfall.png" alt="Hidden Waterfall" title="Hidden Waterfall" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sacred-mountain.png" alt="Sacred Mountain" title="Sacred Mountain" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/snowy-hot-spring.png" alt="Snowy Hot Spring" title="Snowy Hot Spring" loading="lazy" width="48" height="48"><img class="scene" src="scenes/firefly-meadow.png" alt="Firefly Meadow" title="Firefly Meadow" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/rainy-rooftops.png" alt="Rainy Rooftops" title="Rainy Rooftops" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sea-of-clouds.png" alt="Sea of Clouds" title="Sea of Clouds" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/temple-steps.png" alt="Temple Steps" title="Temple Steps" loading="lazy" width="48" height="48"><img class="scene" src="scenes/lighthouse-cove.png" alt="Lighthouse Cove" title="Lighthouse Cove" loading="lazy" width="48" height="48"></div>
+  </section>
+
+  <ul class="facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>No guessing</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V10M10 3h4M18.5 6.5L20 5"/></svg><b>A daily Blitz</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><b>Ads only if you choose</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5v4h4"/></svg><b>Saves to iCloud</b></li></ul>
 
   <section class="card" id="support">
     <h2>Support</h2>
