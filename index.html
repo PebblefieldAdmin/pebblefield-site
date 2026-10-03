@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pebblefield</title>
-<meta name="description" content="Pebblefield is calm, no-guessing Minesweeper that never runs out of ground. Every tile you clear paints part of a hidden 8-bit scene.">
+<meta name="description" content="Pebblefield is calm, no-guessing Minesweeper that never runs out of ground. Every tile you clear paints part of a hidden 8-bit scene. Dig your endless world, race the clock in Pebble Dash, or take on the Blitz of the Day.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -35,8 +35,8 @@
   .screens figcaption b{ display:block; font:600 20px/1.2 Fredoka, ui-rounded, system-ui, sans-serif; }
   .screens figcaption span{ color:var(--muted); font-size:14px; }
   .screens img{ display:block; width:100%; height:auto; border-radius:28px; border:6px solid var(--ink); box-shadow:0 14px 30px rgba(20,40,45,.25); background:var(--card); }
-  /* on wide screens the row runs the full window width, so all five fit side by side */
-  @media (min-width:900px){ .screens{ margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:24px; padding-right:24px; justify-content:safe center; } .screens figure{ flex-basis:200px; } }
+  /* on wide screens the row runs the full window width, so all six fit side by side */
+  @media (min-width:900px){ .screens{ margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:24px; padding-right:24px; justify-content:safe center; } .screens figure{ flex-basis:180px; } }
   /* scenes: the real pixel-art scenes, a few kept as a mystery */
   .wall{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
   .scene{ width:100%; aspect-ratio:1; height:auto; border-radius:12px; image-rendering:pixelated; display:block; }
@@ -62,7 +62,7 @@
   </section>
 
   <section class="screens" aria-label="Screens from the game">
-    <figure><figcaption><b>Watch it paint</b><span>Every tile is a pixel</span></figcaption><img src="shots/2.webp" alt="Watch it paint" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Dig forever</b><span>The ground never runs out</span></figcaption><img src="shots/1.webp" alt="Dig forever" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Never guess</b><span>Stuck? A safe tile glows</span></figcaption><img src="shots/3.webp" alt="Never guess" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Blitz every day</b><span>New map, new twist</span></figcaption><img src="shots/4.webp" alt="Blitz every day" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Make it yours</b><span>Pebbles, flags, moods</span></figcaption><img src="shots/5.webp" alt="Make it yours" loading="lazy" width="600" height="1300"></figure>
+    <figure><figcaption><b>Watch it paint</b><span>Every tile is a pixel</span></figcaption><img src="shots/1.webp" alt="Watch it paint" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Three ways to play</b><span>Endless, Blitz and Dash</span></figcaption><img src="shots/2.webp" alt="Three ways to play" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Never guess</b><span>Stuck? A safe tile glows</span></figcaption><img src="shots/3.webp" alt="Never guess" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Race the clock</b><span>Pebble Dash time trials</span></figcaption><img src="shots/4.webp" alt="Race the clock" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Blitz every day</b><span>One map for everyone</span></figcaption><img src="shots/5.webp" alt="Blitz every day" loading="lazy" width="600" height="1300"></figure><figure><figcaption><b>Make it yours</b><span>Five style sets, Retro too</span></figcaption><img src="shots/6.webp" alt="Make it yours" loading="lazy" width="600" height="1300"></figure>
   </section>
 
   <section class="card scenes-card">
@@ -70,29 +70,45 @@
     <div class="wall"><img class="scene" src="scenes/dawn-lake.png" alt="Dawn Lake" title="Dawn Lake" loading="lazy" width="48" height="48"><img class="scene" src="scenes/bamboo-grove.png" alt="Bamboo Grove" title="Bamboo Grove" loading="lazy" width="48" height="48"><img class="scene" src="scenes/blossom-hill.png" alt="Blossom Hill" title="Blossom Hill" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/moonlit-pagoda.png" alt="Moonlit Pagoda" title="Moonlit Pagoda" loading="lazy" width="48" height="48"><img class="scene" src="scenes/rice-terraces.png" alt="Rice Terraces" title="Rice Terraces" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sand-garden.png" alt="Sand Garden" title="Sand Garden" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sunset-sea.png" alt="Sunset Sea" title="Sunset Sea" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/maple-valley.png" alt="Maple Valley" title="Maple Valley" loading="lazy" width="48" height="48"><img class="scene" src="scenes/lantern-festival.png" alt="Lantern Festival" title="Lantern Festival" loading="lazy" width="48" height="48"><img class="scene" src="scenes/misty-tea-fields.png" alt="Misty Tea Fields" title="Misty Tea Fields" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/wisteria-bridge.png" alt="Wisteria Bridge" title="Wisteria Bridge" loading="lazy" width="48" height="48"><img class="scene" src="scenes/hidden-waterfall.png" alt="Hidden Waterfall" title="Hidden Waterfall" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sacred-mountain.png" alt="Sacred Mountain" title="Sacred Mountain" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/snowy-hot-spring.png" alt="Snowy Hot Spring" title="Snowy Hot Spring" loading="lazy" width="48" height="48"><img class="scene" src="scenes/firefly-meadow.png" alt="Firefly Meadow" title="Firefly Meadow" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/rainy-rooftops.png" alt="Rainy Rooftops" title="Rainy Rooftops" loading="lazy" width="48" height="48"><img class="scene" src="scenes/sea-of-clouds.png" alt="Sea of Clouds" title="Sea of Clouds" loading="lazy" width="48" height="48"><span class="scene q" aria-hidden="true">?</span><img class="scene" src="scenes/temple-steps.png" alt="Temple Steps" title="Temple Steps" loading="lazy" width="48" height="48"><img class="scene" src="scenes/lighthouse-cove.png" alt="Lighthouse Cove" title="Lighthouse Cove" loading="lazy" width="48" height="48"></div>
   </section>
 
-  <ul class="facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>No guessing</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V10M10 3h4M18.5 6.5L20 5"/></svg><b>A daily Blitz</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><b>Ads only if you choose</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5v4h4"/></svg><b>Saves to iCloud</b></li></ul>
+  <ul class="facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>No guessing</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><circle cx="17.25" cy="17.25" r="3.75"/></svg><b>Three ways to play</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><b>Ads only if you choose</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5v4h4"/></svg><b>Saves to iCloud</b></li></ul>
 
   <section class="card" id="support">
     <h2>Support</h2>
     <details>
       <summary>How do I restore my Commuter Pass?</summary>
-      <p>Open the menu (the two lines at the top right) and tap Restore purchases. It is also at the bottom of the shop. Use the same Apple ID you bought it with.</p>
+      <p>Open the menu (the two lines at the top right) and tap Restore purchases. It is also at the bottom of the shop. Use the same Apple ID you bought it with. Glints and Multiplier Savers are not restored this way: they stay with your progress, which iCloud keeps safe.</p>
     </details>
     <details>
       <summary>How do I cancel my Commuter Pass?</summary>
       <p>Subscriptions are managed by Apple. Open the Settings app, tap your name, then Subscriptions, then Pebblefield. Cancel at least 24 hours before the month ends to avoid the next charge. After you cancel, your pass keeps working until the end of the month you have already paid for.</p>
     </details>
     <details>
+      <summary>What does the Commuter Pass include?</summary>
+      <p>No ads: every bonus that would play an ad arrives instantly, including the last save of a multiplier past x20. You also get 10 Glints a day and the Night Train mood. The game itself is the same with or without it.</p>
+    </details>
+    <details>
       <summary>How do I move my progress to a new iPhone?</summary>
-      <p>If you are signed in to iCloud, your progress follows you: open Pebblefield on the new iPhone and choose "Use the iCloud progress" when it asks. You can also open the menu, tap Back up progress, copy the code, and paste it into Restore on the new phone. Glint packs come with your progress, and a Commuter Pass comes back with Restore purchases.</p>
+      <p>If you are signed in to iCloud, your progress follows you: open Pebblefield on the new iPhone and choose which progress to keep when it asks. Glints and Multiplier Savers you bought always come with you, whichever you choose. You can also open the menu, tap Back up progress, copy the code, and paste it into Restore on the new phone. A Commuter Pass comes back with Restore purchases.</p>
+    </details>
+    <details>
+      <summary>What is a Multiplier Saver?</summary>
+      <p>Past x20, a mine resets your multiplier unless you save it. You get one last save with a short ad (free with the Commuter Pass); after that, a Multiplier Saver keeps it. While a save is being paid for, the game waits, so nothing can happen in between. If the purchase does not go through, the offer comes back and you are not charged. Runs kept with a Saver count in your own stats but stay off the global leaderboards.</p>
+    </details>
+    <details>
+      <summary>How do I earn a gold star?</summary>
+      <p>Paint a whole page from start to finish with no mine hit, no undo and no helper. Pages still on track show a hollow star on their label. Your gold stars are counted in Stats.</p>
     </details>
     <details>
       <summary>How does the Blitz of the Day work?</summary>
-      <p>Everyone plays the same map with the same twist for five minutes. Your first run each day is the ranked one; replays are practice. The top 5, and everyone in the top 10%, win Glints, paid the next time you open the game. A new Blitz starts every day at midnight Singapore time (16:00 UTC). Rankings use Game Center, so sign in to Game Center to appear on the leaderboard.</p>
+      <p>Everyone plays the same map with the same twist for five minutes. Your first run each day is the ranked one; replays are practice. During a run, the next place on the board is shown under the timer. The top 5, and everyone in the top 10%, win Glints, paid the next time you open the game. A new Blitz starts every day at midnight Singapore time (16:00 UTC). Rankings use Game Center, so sign in to Game Center to appear on the leaderboard.</p>
+    </details>
+    <details>
+      <summary>How do Pebble Dash times work?</summary>
+      <p>Pebble Dash is classic Minesweeper against the clock, in four sizes from Easy to Extreme. Every board can be solved without guessing. The clock starts after your first tap and stops when the last safe tile opens; a mine ends the run. Each size has its own Game Center board of best times, where equal times are ranked by the board's size (3BV). Your first clear of each size each day earns 5 Glints.</p>
     </details>
     <details>
       <summary>Why did part of the field lock?</summary>
-      <p>Hitting a mine locks that sector. Clear all 8 sectors around it to reopen it for free, or reopen it straight away with Glints or a short ad.</p>
+      <p>Hitting a mine locks that sector. Solve 4 of the 8 sectors around it to reopen it for free, or reopen it straight away with Glints or a short ad.</p>
     </details>
     <details>
       <summary>How do I change my ad privacy choices?</summary>
