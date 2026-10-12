@@ -3,7 +3,14 @@
 The public pages for the Pebblefield app: home and support (`index.html`) and the privacy policy (`privacy.html`).
 Published with GitHub Pages. The game itself lives in a separate, private repository.
 
-Images: `shots/` holds six real game screens (WebP, made from the game repository's `store/raw` captures: painting, home screen, rescue, Pebble Dash, Blitz, style sets; updated 2026-10-03 for v1.0) and
+The site matches the launch version, **1.0.1 (iPhone build 28, game commit `b03b3b4`; Android the same code)**, updated
+2026-10-12: five ways to play (with Scene of the Day and Photo Puzzle), support for iPhone and Android, and a privacy
+policy covering Photo Puzzle, Android and the Android Blitz leaderboard (`privacy.html#delete` is the data-deletion
+link for Google Play).
+
+Images: `shots/` holds eight real game screens (WebP, 600 x 1300): 1 painting, 2 the five ways to play, 3 rescue,
+4 Pebble Dash, 5 Blitz, 6 style sets (from the game's `store/raw` captures for v1.0), 7 Scene of the Day and 8 Photo
+Puzzle (captured from build 28's code on 2026-10-12; the photo is a drawn stand-in, not a real one), and
 `scenes/` the 25 painting scenes as 48 x 48 pixel art, exported from the game; both are shown on the home page.
 
 ## Launch week (`launch.json`)
