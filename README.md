@@ -31,3 +31,9 @@ Google Play once `PLAY_LIVE` is true (until then, the home page), anything else 
 (Apple's provider token, from App Store Connect > App Analytics > Acquisition > Campaigns) so App Store downloads are
 counted per campaign. When Google Play goes live: set `PLAY_LIVE = true` and swap "Google Play: coming soon" on the home
 page for a Google Play button.
+
+## app-ads.txt
+
+AdMob reads it at the root of the developer website's domain: https://pebblefieldadmin.github.io/app-ads.txt (the
+`PebblefieldAdmin.github.io` repository, published 2026-10-01). A copy sits here too (added 2026-10-20, as a
+precaution); the root one is the one that counts. Both hold the one line AdMob gives in its setup instructions.
