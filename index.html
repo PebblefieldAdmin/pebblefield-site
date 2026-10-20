@@ -7,6 +7,7 @@
 <meta name="description" content="Pebblefield is calm, no-guessing Minesweeper that never runs out of ground. Every tile you clear paints part of a hidden 8-bit scene. Dig your endless world, take on the Blitz of the Day, paint the Scene of the Day, turn your own photo into a puzzle, or race the clock in Pebble Dash. For iPhone and Android.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-itunes-app" content="app-id=6817978780">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root{ --bg:#DCE7E6; --card:#F6FAF9; --ink:#23383D; --muted:#4F6368; --line:rgba(35,56,61,.12); --link:#1F7FA3; --chip:#E4EDEB; --flag:#EFA92E; }
@@ -19,6 +20,14 @@
   h1.wordmark{ font-family:Sora, ui-rounded, system-ui, sans-serif; font-weight:300; text-transform:uppercase; letter-spacing:.42em; margin:26px -.42em 14px 0; font-size:28px; line-height:1.2; }
   .tagline{ font-size:19px; color:var(--muted); margin:0 auto 20px; max-width:30em; }
   .badge{ display:inline-block; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--bg); font-weight:700; font-size:15px; }
+  /* the download button (live on the App Store since 2026-10-20; Google Play to follow) */
+  .get{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .store{ display:inline-flex; align-items:center; gap:12px; padding:10px 22px 10px 16px; border-radius:16px; background:var(--ink); color:var(--bg); text-decoration:none; box-shadow:0 8px 22px rgba(20,40,45,.2); }
+  .store svg{ width:26px; height:26px; flex:none; }
+  .store span{ display:flex; flex-direction:column; text-align:left; line-height:1.15; font:600 20px Fredoka, ui-rounded, system-ui, sans-serif; }
+  .store small{ font:700 12px Nunito, ui-rounded, system-ui, sans-serif; opacity:.85; }
+  .store:hover{ filter:brightness(1.12); }
+  .soon{ font-size:14px; font-weight:700; color:var(--muted); }
   .card{ background:var(--card); border:1px solid var(--line); border-radius:24px; padding:24px; margin-top:16px; }
   h2{ font-size:22px; margin:0 0 12px; }
   details{ border-top:1px solid var(--line); padding:12px 0; }
@@ -26,7 +35,7 @@
   summary{ cursor:pointer; font-weight:700; }
   details p{ margin:8px 0 0; color:var(--muted); }
   a{ color:var(--link); }
-  /* TikTok and Instagram, under the App Store badge */
+  /* TikTok and Instagram, under the download button */
   .social{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:16px; }
   .social a{ display:inline-flex; align-items:center; gap:8px; padding:8px 16px 8px 12px; border-radius:999px; background:var(--card); border:1px solid var(--line); color:var(--ink); text-decoration:none; font:600 15px Fredoka, ui-rounded, system-ui, sans-serif; }
   .social svg{ width:20px; height:20px; flex:none; }
@@ -63,7 +72,10 @@
     <img src="icon.svg" alt="Pebblefield app icon">
     <h1 class="wordmark">Pebblefield</h1>
     <p class="tagline">Calm Minesweeper that<br>Paints a Hidden Picture.</p>
-    <span class="badge">Coming soon to the App Store and Google Play</span>
+    <div class="get">
+      <a class="store" href="https://apps.apple.com/app/id6817978780" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg><span><small>Download free on the</small>App Store</span></a>
+      <span class="soon">Google Play: coming soon</span>
+    </div>
     <nav class="social" aria-label="Pebblefield on social media">
       <a href="https://www.tiktok.com/@pebblefield" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 3v11.6a3.6 3.6 0 1 1-3.6-3.6"/><path d="M13.5 3c.5 2.7 2.4 4.5 5.2 4.8"/></svg><span>@pebblefield</span></a>
       <a href="https://www.instagram.com/pebblefieldinfinite/" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg><span>@pebblefieldinfinite</span></a>
