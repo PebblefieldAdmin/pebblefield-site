@@ -25,7 +25,7 @@
 <script>
 (function(){
   var APP = 'https://apps.apple.com/app/id6817978780', PLAY = 'https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield';
-  var PT = '';            // Apple's provider token (a number), so App Store downloads are counted per campaign
+  var PT = '129540917';   // Apple's provider token (owner, 2026-10-20), so App Store downloads are counted per campaign
   var PLAY_LIVE = false;  // true once Pebblefield is live on Google Play
   var c = (new URLSearchParams(location.search).get('c') || 'web').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40) || 'web';
   var ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), android = /Android/.test(ua);

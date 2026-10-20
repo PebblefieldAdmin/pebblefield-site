@@ -27,9 +27,9 @@ Live on the App Store (https://apps.apple.com/app/id6817978780) since 2026-10-20
 has the download button (and Safari on iPhone shows Apple's App Store banner, from the `apple-itunes-app` meta tag).
 
 `get.html?c=<campaign>` is the one link for ads and bios: iPhone and iPad go straight to the App Store, Android to
-Google Play once `PLAY_LIVE` is true (until then, the home page), anything else to the home page. Fill in `PT`
-(Apple's provider token, from App Store Connect > App Analytics > Acquisition > Campaigns) so App Store downloads are
-counted per campaign. When Google Play goes live: set `PLAY_LIVE = true` and swap "Google Play: coming soon" on the home
+Google Play once `PLAY_LIVE` is true (until then, the home page), anything else to the home page. `PT` holds Apple's
+provider token (129540917, from App Store Connect > Analytics > Acquisition > Campaigns), so App Store downloads are
+counted per campaign (the `c` name, letters, digits, - and _ only). When Google Play goes live: set `PLAY_LIVE = true` and swap "Google Play: coming soon" on the home
 page for a Google Play button.
 
 ## app-ads.txt
