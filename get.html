@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Get Pebblefield</title>
-<meta name="description" content="Pebblefield: calm, no-guessing Minesweeper that paints a hidden picture. Free on the App Store.">
+<meta name="description" content="Pebblefield: calm, no-guessing Minesweeper that paints a hidden picture. Free on the App Store and Google Play.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <!--
   The one link for ads and bios: get.html?c=<campaign> (for example get.html?c=tiktok-launch).
-  iPhone and iPad go straight to the App Store, Android to Google Play once it is live (until then, the home page),
+  iPhone and iPad go straight to the App Store, Android to Google Play,
   anything else to the home page. With Apple's provider token (PT below, from App Store Connect > App Analytics >
   Acquisition > Campaigns) the App Store counts downloads per campaign; Google Play counts its UTM tags.
 -->
@@ -26,7 +26,7 @@
 (function(){
   var APP = 'https://apps.apple.com/app/id6817978780', PLAY = 'https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield';
   var PT = '129540917';   // Apple's provider token (owner, 2026-10-20), so App Store downloads are counted per campaign
-  var PLAY_LIVE = false;  // true once Pebblefield is live on Google Play
+  var PLAY_LIVE = true;   // live on Google Play (owner, 2026-10-26)
   var c = (new URLSearchParams(location.search).get('c') || 'web').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40) || 'web';
   var ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), android = /Android/.test(ua);
   var to = './';

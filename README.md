@@ -23,14 +23,14 @@ the game shows nothing.
 
 ## Download (since 2026-10-20)
 
-Live on the App Store (https://apps.apple.com/app/id6817978780) since 2026-10-20; Google Play to follow. The home page
-has the download button (and Safari on iPhone shows Apple's App Store banner, from the `apple-itunes-app` meta tag).
+Live on the App Store (https://apps.apple.com/app/id6817978780) since 2026-10-20 and on Google Play
+(https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield) since 2026-10-26. The home page
+has both download buttons (and Safari on iPhone shows Apple's App Store banner, from the `apple-itunes-app` meta tag).
 
 `get.html?c=<campaign>` is the one link for ads and bios: iPhone and iPad go straight to the App Store, Android to
-Google Play once `PLAY_LIVE` is true (until then, the home page), anything else to the home page. `PT` holds Apple's
+Google Play (`PLAY_LIVE`, true since 2026-10-26), anything else to the home page. `PT` holds Apple's
 provider token (129540917, from App Store Connect > Analytics > Acquisition > Campaigns), so App Store downloads are
-counted per campaign (the `c` name, letters, digits, - and _ only). When Google Play goes live: set `PLAY_LIVE = true` and swap "Google Play: coming soon" on the home
-page for a Google Play button.
+counted per campaign (the `c` name, letters, digits, - and _ only).
 
 ## app-ads.txt
 
