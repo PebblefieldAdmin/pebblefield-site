@@ -154,5 +154,18 @@
     © 2026 Pebblefield
   </footer>
 </main>
+<script>
+/* Ads that must land on this page (Google Ads rejects a link that sends people on to another site, "Destination
+   mismatch", 2026-11-01) link here as index.html?c=<campaign>. The two store buttons then carry the campaign, the same
+   way get.html does: App Store Connect counts it under Campaigns, Google Play under its UTM source. */
+(function(){
+  var c = (new URLSearchParams(location.search).get('c') || 'website').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40) || 'website';
+  var PT = '129540917', links = document.querySelectorAll('a.store');
+  links.forEach(function(a){
+    if (a.href.indexOf('apps.apple.com') > -1) a.href = 'https://apps.apple.com/app/id6817978780?pt=' + PT + '&ct=' + c + '&mt=8';
+    else if (a.href.indexOf('play.google.com') > -1) a.href = 'https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield&referrer=' + encodeURIComponent('utm_source=' + c + '&utm_medium=' + (c === 'website' ? 'site' : 'ad') + '&utm_campaign=' + c);
+  });
+})();
+</script>
 </body>
 </html>
