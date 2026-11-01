@@ -1,7 +1,8 @@
 # Pebblefield website
 
 The public pages for the Pebblefield app: home and support (`index.html`) and the privacy policy (`privacy.html`).
-Published with GitHub Pages. The game itself lives in a separate, private repository.
+Published with GitHub Pages at **https://pebblefield.app** (since 2026-11-01; the `CNAME` file holds the domain, and old
+pebblefieldadmin.github.io/pebblefield-site links redirect here). The game itself lives in a separate, private repository.
 
 The site matches the launch version, **1.0.1 (iPhone build 28, game commit `b03b3b4`; Android the same code)**, updated
 2026-10-12: five ways to play (with Scene of the Day and Photo Puzzle), support for iPhone and Android, and a privacy
@@ -34,6 +35,7 @@ counted per campaign (the `c` name, letters, digits, - and _ only).
 
 ## app-ads.txt
 
-AdMob reads it at the root of the developer website's domain: https://pebblefieldadmin.github.io/app-ads.txt (the
-`PebblefieldAdmin.github.io` repository, published 2026-10-01). A copy sits here too (added 2026-10-20, as a
-precaution); the root one is the one that counts. Both hold the one line AdMob gives in its setup instructions.
+AdMob reads it at the root of the developer website's domain. Since the move to pebblefield.app (2026-11-01) that is
+this repository's copy, https://pebblefield.app/app-ads.txt, once the stores list https://pebblefield.app as the
+website. The older copy at https://pebblefieldadmin.github.io/app-ads.txt (the `PebblefieldAdmin.github.io`
+repository) stays as it is; keep the two the same. Both hold the one line AdMob gives in its setup instructions.
