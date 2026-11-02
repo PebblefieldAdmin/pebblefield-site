@@ -19,6 +19,8 @@
   body{ margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--ink); font:500 17px/1.6 ui-rounded, -apple-system, system-ui, sans-serif; padding:16px; text-align:center; }
   a{ color:var(--link); }
 </style>
+<!-- Cloudflare Web Analytics (owner, 2026-11-02): visit counts with no cookies and nothing personal kept -->
+<script type='module' id='cfb' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e2d4162d331c40efa3f43cd73ddec958"}'></script>
 </head>
 <body>
 <p>Taking you to <a id="go" href="./">Pebblefield</a>…</p>
@@ -33,7 +35,11 @@
   if (ios) to = APP + (PT ? '?pt=' + PT + '&ct=' + c + '&mt=8' : '');
   else if (android && PLAY_LIVE) to = PLAY + '&referrer=' + encodeURIComponent('utm_source=' + c + '&utm_medium=ad&utm_campaign=' + c);
   document.getElementById('go').href = to;
-  location.replace(to);
+  // the visit is counted before moving on: wait for the analytics beacon to load (it sends the visit as the page is
+  // left), at most 0.7 s, so a slow connection never holds anyone back
+  var went = false, go = function(){ if (!went){ went = true; location.replace(to); } };
+  var b = document.getElementById('cfb'); if (b) b.addEventListener('load', function(){ setTimeout(go, 150); });
+  setTimeout(go, 700);
 })();
 </script>
 </body>
