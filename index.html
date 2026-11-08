@@ -57,7 +57,17 @@
   .social a:hover{ border-color:var(--link); color:var(--link); }
   .award{ margin-top:18px; text-align:center; }
   .award img{ display:inline-block; max-width:100%; height:auto; }
-  footer{ text-align:center; color:var(--muted); font-size:15px; margin-top:28px; }
+  /* the footer in columns (owner, 2026-11-08): the name, then Play, Community and Help; three across under the name on phones */
+  .foot{ margin-top:28px; padding:28px 24px 18px; background:var(--card); border:1px solid var(--line); border-radius:24px; color:var(--muted); font-size:15px; }
+  .foot-cols{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:24px; }
+  .foot-logo{ display:inline-flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font:600 19px Fredoka, ui-rounded, system-ui, sans-serif; }
+  .foot-logo img{ border-radius:9px; }
+  .foot-brand p{ margin:10px 0 0; line-height:1.5; max-width:18em; }
+  .foot h3{ margin:4px 0 10px; color:var(--ink); font:700 13px Nunito, ui-rounded, system-ui, sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+  .foot nav a{ display:block; padding:3px 0; color:var(--muted); text-decoration:none; }
+  .foot nav a:hover{ color:var(--link); }
+  .foot-copy{ margin:22px 0 0; padding-top:14px; border-top:1px solid var(--line); font-size:13px; text-align:center; }
+  @media (max-width:600px){ .foot{ padding:24px 18px 16px; } .foot-cols{ grid-template-columns:repeat(3, auto); justify-content:space-between; gap:20px 12px; } .foot-brand{ grid-column:1 / -1; } .foot nav a{ font-size:14.5px; } }
   /* screens: a swipeable row of real game screens, running edge to edge */
   .screens{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; margin:8px -16px 0; padding:8px 16px 20px; scrollbar-width:none; }
   .screens::-webkit-scrollbar{ display:none }
@@ -175,10 +185,31 @@
     </details>
   </section>
 
-  <footer>
-    <a href="https://www.tiktok.com/@pebblefield" rel="noopener">TikTok</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/pebblefieldinfinite/" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://discord.gg/FgZqSJxjv" rel="noopener">Discord</a><br>
-    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="#support">Support</a> &nbsp;·&nbsp; <a href="press/">Press kit</a><br>
-    © 2026 Pebblefield
+  <footer class="foot">
+    <div class="foot-cols">
+      <div class="foot-brand">
+        <a href="./" class="foot-logo"><img src="icon.svg" alt="" width="36" height="36"><b>Pebblefield</b></a>
+        <p>No-guess Minesweeper that paints a hidden picture, one tile at a time.</p>
+      </div>
+      <nav aria-label="Play">
+        <h3>Play</h3>
+        <a href="https://apps.apple.com/app/id6817978780" class="store-link" rel="noopener">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dsite" class="store-link" rel="noopener">Google Play</a>
+      </nav>
+      <nav aria-label="Community">
+        <h3>Community</h3>
+        <a href="https://discord.gg/FgZqSJxjv" rel="noopener">Discord</a>
+        <a href="https://www.tiktok.com/@pebblefield" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/pebblefieldinfinite/" rel="noopener">Instagram</a>
+      </nav>
+      <nav aria-label="Help">
+        <h3>Help</h3>
+        <a href="#support">Support</a>
+        <a href="press/">Press kit</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+    <p class="foot-copy">© 2026 Pebblefield</p>
   </footer>
 </main>
 <script>
@@ -187,7 +218,7 @@
    way get.html does: App Store Connect counts it under Campaigns, Google Play under its UTM source. */
 (function(){
   var c = (new URLSearchParams(location.search).get('c') || 'website').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40) || 'website';
-  var PT = '129540917', links = document.querySelectorAll('a.store');
+  var PT = '129540917', links = document.querySelectorAll('a.store, a.store-link');
   links.forEach(function(a){
     if (a.href.indexOf('apps.apple.com') > -1) a.href = 'https://apps.apple.com/app/id6817978780?pt=' + PT + '&ct=' + c + '&mt=8';
     else if (a.href.indexOf('play.google.com') > -1) a.href = 'https://play.google.com/store/apps/details?id=com.pebbleadmin.pebblefield&referrer=' + encodeURIComponent('utm_source=' + c + '&utm_medium=' + (c === 'website' ? 'site' : 'ad') + '&utm_campaign=' + c);
