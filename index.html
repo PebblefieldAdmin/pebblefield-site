@@ -83,6 +83,16 @@
   .fs-chips li{ padding:5px 12px; border-radius:999px; background:var(--card); border:1px solid var(--line); font-size:14px; font-weight:700; color:var(--ink); }
   .fest-soon .fs-tuned{ font-weight:700; color:var(--ink); }
   @media (max-width:600px){ .fest-soon{ gap:14px; } .fs-ico{ width:44px; height:44px; border-radius:14px; } .fs-ico svg{ width:24px; height:24px; } }
+  /* What's new: the live version open, earlier ones folded away */
+  .news h2{ margin-bottom:14px; }
+  .rel-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }
+  .rel-head b{ font:600 18px Fredoka, ui-rounded, system-ui, sans-serif; color:var(--ink); }
+  .rel-head span{ font-size:14px; color:var(--muted); }
+  .rel ul{ margin:8px 0 0; padding-left:20px; color:var(--muted); }
+  .rel li{ margin:4px 0; }
+  .rel li::marker{ color:var(--flag); }
+  .news details.rel-older{ margin-top:16px; padding:12px 0 0; border-top:1px solid var(--line); }
+  .news details.rel-older .rel{ margin-top:10px; }
   /* the footer in columns (owner, 2026-11-08): the name, then Play, Community and Help; three across under the name on phones */
   .foot{ margin-top:28px; padding:28px 24px 18px; background:var(--card); border:1px solid var(--line); border-radius:24px; color:var(--muted); font-size:15px; }
   .foot-cols{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:24px; }
@@ -168,6 +178,36 @@
   </section>
 
   <ul class="facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>No guessing</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><circle cx="17.25" cy="17.25" r="3.75"/></svg><b>Five ways to play</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><b>Ads only if you choose</b></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5v4h4"/></svg><b>Back up your progress</b></li></ul>
+
+  <!-- What's new (owner, 2026-11-08: "show updates when pushed"). Kept by Claude: when the owner says a version is live on
+       the App Store or Google Play, its notes go on top here and the one before moves into Earlier updates
+       (the rule is step 6 in docs/VERSIONS.md of the game's repo). -->
+  <section class="card news" id="whats-new">
+    <h2>What’s new</h2>
+    <article class="rel">
+      <div class="rel-head"><b>Version 1.0.9</b><span>November 2026 · App Store and Google Play</span></div>
+      <ul>
+        <li>One leaderboard for everyone: iPhone and Android race on the same Blitz, weekly, all-time and Pebble Dash boards</li>
+        <li>Pick your own name for the boards</li>
+        <li>A fresh menu, with everything one tap away</li>
+        <li>The Alpine Meadows style set: meadow pebbles, a cowbell flag and a hot-air balloon</li>
+        <li>The Christmas pack, until Christmas Eve</li>
+        <li>Fixed: Blitz boards that sometimes drew only in part</li>
+      </ul>
+    </article>
+    <details class="rel-older">
+      <summary>Earlier updates</summary>
+      <article class="rel">
+        <div class="rel-head"><b>Version 1.0.7</b><span>November 2026</span></div>
+        <ul>
+          <li>Every picture forgives its first mine, so one slip never costs the gold star</li>
+          <li>Every finished picture shows how long it took</li>
+          <li>See yesterday’s Blitz podium before you collect your prize</li>
+          <li>Three new cascades: Fireflies, Zen rake and Starlight</li>
+        </ul>
+      </article>
+    </details>
+  </section>
 
   <section class="card help-card" id="support">
     <h2>Questions?</h2>
