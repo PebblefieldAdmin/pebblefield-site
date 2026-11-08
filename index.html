@@ -72,6 +72,17 @@
     .cta .social a{ position:relative; width:44px; height:44px; padding:0; justify-content:center; border-radius:50%; }
     .cta .social a span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
   }
+  /* the Winter Festival teaser: frosty blue, flat */
+  .fest-soon{ display:flex; gap:18px; align-items:flex-start; background:color-mix(in srgb, #7FB2D9 16%, var(--card)); border-color:color-mix(in srgb, #7FB2D9 45%, transparent); margin:4px 0 20px; }
+  .fs-ico{ flex:none; width:52px; height:52px; border-radius:16px; background:#7FB2D9; color:#fff; display:grid; place-items:center; }
+  .fs-ico svg{ width:28px; height:28px; }
+  .fs-tag{ display:inline-block; padding:3px 10px; border-radius:999px; background:#7FB2D9; color:#fff; font:700 12px Nunito, ui-rounded, system-ui, sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+  .fest-soon h2{ margin:8px 0 4px; }
+  .fest-soon p{ margin:0; color:var(--muted); }
+  .fs-chips{ display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:12px 0; }
+  .fs-chips li{ padding:5px 12px; border-radius:999px; background:var(--card); border:1px solid var(--line); font-size:14px; font-weight:700; color:var(--ink); }
+  .fest-soon .fs-tuned{ font-weight:700; color:var(--ink); }
+  @media (max-width:600px){ .fest-soon{ gap:14px; } .fs-ico{ width:44px; height:44px; border-radius:14px; } .fs-ico svg{ width:24px; height:24px; } }
   /* the footer in columns (owner, 2026-11-08): the name, then Play, Community and Help; three across under the name on phones */
   .foot{ margin-top:28px; padding:28px 24px 18px; background:var(--card); border:1px solid var(--line); border-radius:24px; color:var(--muted); font-size:15px; }
   .foot-cols{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:24px; }
@@ -132,6 +143,18 @@
       <img src="https://api.pixelpicked.com/api/badges/2EbrANW3iWm/live.png?theme=dark"
           width="250" height="54" alt="Approved on PixelPicked" />
       </a>
+    </div>
+  </section>
+
+  <!-- the Winter Festival teaser (owner, 2026-11-08: "an upcoming winter festival event, stay tuned card"); comes with 1.1 -->
+  <section class="card fest-soon" aria-label="Coming soon: the Winter Festival">
+    <span class="fs-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M12 5.5l-2.2-2M12 5.5l2.2-2M12 18.5l-2.2 2M12 18.5l2.2 2"/></svg></span>
+    <div class="fs-txt">
+      <span class="fs-tag">Coming soon</span>
+      <h2>The Winter Festival</h2>
+      <p>A snowy map of its own with 25 Christmas scenes to paint, for a limited time only.</p>
+      <ul class="fs-chips"><li>25 festive scenes</li><li>An exclusive dig</li><li>The Christmas pack for gold stars</li></ul>
+      <p class="fs-tuned">Stay tuned.</p>
     </div>
   </section>
 
